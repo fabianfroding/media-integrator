@@ -28,13 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.BTNIntegrate = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // BTNIntegrate
+            // 
+            this.BTNIntegrate.Location = new System.Drawing.Point(43, 75);
+            this.BTNIntegrate.Name = "BTNIntegrate";
+            this.BTNIntegrate.Size = new System.Drawing.Size(160, 57);
+            this.BTNIntegrate.TabIndex = 0;
+            this.BTNIntegrate.Text = "Start Integration";
+            this.BTNIntegrate.UseVisualStyleBackColor = true;
+            this.BTNIntegrate.Click += new System.EventHandler(this.BTNIntegrate_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(447, 216);
+            this.Controls.Add(this.BTNIntegrate);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.ResumeLayout(false);
@@ -42,6 +55,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button BTNIntegrate;
     }
 }
 

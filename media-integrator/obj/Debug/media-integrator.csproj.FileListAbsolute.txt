@@ -1,0 +1,9 @@
+C:\Users\Fabian\Studier\DVGB07-C#.NET\lab4\media-integrator\bin\Debug\media-integrator.exe.config
+C:\Users\Fabian\Studier\DVGB07-C#.NET\lab4\media-integrator\bin\Debug\media-integrator.exe
+C:\Users\Fabian\Studier\DVGB07-C#.NET\lab4\media-integrator\bin\Debug\media-integrator.pdb
+C:\Users\Fabian\Studier\DVGB07-C#.NET\lab4\media-integrator\obj\Debug\media-integrator.csprojAssemblyReference.cache
+C:\Users\Fabian\Studier\DVGB07-C#.NET\lab4\media-integrator\obj\Debug\media_integrator.MainForm.resources
+C:\Users\Fabian\Studier\DVGB07-C#.NET\lab4\media-integrator\obj\Debug\media_integrator.Properties.Resources.resources
+C:\Users\Fabian\Studier\DVGB07-C#.NET\lab4\media-integrator\obj\Debug\media-integrator.csproj.GenerateResource.cache
+C:\Users\Fabian\Studier\DVGB07-C#.NET\lab4\media-integrator\obj\Debug\media-integrator.exe
+C:\Users\Fabian\Studier\DVGB07-C#.NET\lab4\media-integrator\obj\Debug\media-integrator.pdb
