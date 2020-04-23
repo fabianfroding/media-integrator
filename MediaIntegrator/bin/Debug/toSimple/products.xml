@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Products>
+  <Product>
+    <Id>6</Id>
+    <Name>Sicario OST</Name>
+    <Price>179</Price>
+    <Stock>50</Stock>
+    <ProductType>CD</ProductType>
+  </Product>
+  <Product>
+    <Id>7</Id>
+    <Name>The Matrix</Name>
+    <Price>99</Price>
+    <Stock>50</Stock>
+    <ProductType>DVD</ProductType>
+  </Product>
+  <Product>
+    <Id>12</Id>
+    <Name>Okami</Name>
+    <Price>399</Price>
+    <Stock>50</Stock>
+    <ProductType>GAME</ProductType>
+  </Product>
+  <Product>
+    <Id>8</Id>
+    <Name>The Organized Mind</Name>
+    <Price>89</Price>
+    <Stock>49</Stock>
+    <ProductType>BOOK</ProductType>
+  </Product>
+  <Product>
+    <Id>13</Id>
+    <Name>Dune</Name>
+    <Price>199</Price>
+    <Stock>48</Stock>
+    <ProductType>DVD</ProductType>
+  </Product>
+  <Product>
+    <Id>1</Id>
+    <Name>The Legend of Zelda: Breath of the Wild</Name>
+    <Price>599</Price>
+    <Stock>49</Stock>
+    <ProductType>GAME</ProductType>
+  </Product>
+  <Product>
+    <Id>15</Id>
+    <Name>What Every Body is Saying</Name>
+    <Price>129</Price>
+    <Stock>48</Stock>
+    <ProductType>BOOK</ProductType>
+  </Product>
+  <Product>
+    <Id>4</Id>
+    <Name>Atomic Habits</Name>
+    <Price>189</Price>
+    <Stock>47</Stock>
+    <ProductType>BOOK</ProductType>
+  </Product>
+  <Product>
+    <Id>11</Id>
+    <Name>Deltaco Signalomvandlare SCART till HDMI - Svart</Name>
+    <Price>999</Price>
+    <Stock>47</Stock>
+    <ProductType>OTHER</ProductType>
+  </Product>
+  <Product>
+    <Id>2</Id>
+    <Name>Wacom One 13"</Name>
+    <Price>4390</Price>
+    <Stock>48</Stock>
+    <ProductType>OTHER</ProductType>
+  </Product>
+  <Product>
+    <Id>5</Id>
+    <Name>Hollow Knight</Name>
+    <Price>449</Price>
+    <Stock>46</Stock>
+    <ProductType>GAME</ProductType>
+  </Product>
+  <Product>
+    <Id>10</Id>
+    <Name>Lenovo L27i-28</Name>
+    <Price>2290</Price>
+    <Stock>49</Stock>
+    <ProductType>OTHER</ProductType>
+  </Product>
+  <Product>
+    <Id>3</Id>
+    <Name>Mad Max: Fury Road</Name>
+    <Price>99</Price>
+    <Stock>48</Stock>
+    <ProductType>DVD</ProductType>
+  </Product>
+  <Product>
+    <Id>9</Id>
+    <Name>Octopath Traveler OST</Name>
+    <Price>199</Price>
+    <Stock>48</Stock>
+    <ProductType>CD</ProductType>
+  </Product>
+  <Product>
+    <Id>14</Id>
+    <Name>Hail Caesar</Name>
+    <Price>149</Price>
+    <Stock>48</Stock>
+    <ProductType>DVD</ProductType>
+  </Product>
+</Products>
