@@ -20,6 +20,13 @@ namespace media_integrator
             "Id", "Name", "Price", "Stock", "ProductType"
         };
 
+        private static readonly string[] ITEM_FIELDS = new string[9]
+        {
+            "Name", "Count", "Price", "Comment", "Artist", "Publisher", "Genre", "Year", "ProductID"
+        };
+
+        bool ongoing = false;
+
         //=============== Public Functions ===============//
         public void StartFileWatcher()
         {
@@ -47,23 +54,35 @@ namespace media_integrator
             List<string> lines = File.ReadAllLines(fi.FullName).ToList();
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
-            XmlWriter xw = XmlWriter.Create(destinationDirPath, settings);
+            XmlWriter xw = XmlWriter.Create(destinationDirPath + "products.xml", settings);
             
             xw.WriteStartDocument();
-            xw.WriteStartElement("Products");
+            xw.WriteStartElement("Inventory");
             foreach (string line in lines)
             {
                 if (line != "")
                 {
-                    xw.WriteStartElement("Product");
-                    string[] entries = line.Split('|');
+                    xw.WriteStartElement("Item");
+                    string[] productValues = line.Split('|');
+                    string[] itemValues = new string[9];
 
-                    for (int i = 0; i < entries.Length; i++)
+                    itemValues[0] = productValues[1];
+                    itemValues[1] = productValues[3];
+                    itemValues[2] = productValues[2];
+                    itemValues[3] = "";
+                    itemValues[4] = "";
+                    itemValues[5] = "";
+                    itemValues[6] = "";
+                    itemValues[7] = "0";
+                    itemValues[8] = productValues[0];
+
+                    for (int i = 0; i < itemValues.Length; i++)
                     {
-                        xw.WriteStartElement(PRODUCT_FIELDS[i]);
-                        xw.WriteValue(entries[i]);
+                        xw.WriteStartElement(ITEM_FIELDS[i]);
+                        xw.WriteValue(itemValues[i]);
                         xw.WriteEndElement();
                     }
+
                     xw.WriteEndElement();
                 }
             }
@@ -71,16 +90,25 @@ namespace media_integrator
             xw.Close();
         }
 
-        private static void FileChanged(object sender, FileSystemEventArgs e)
+        private void FileChanged(object sender, FileSystemEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine(e.Name + " created or changed.");
+            if (!ongoing)
+            {
+                ongoing = true;
+                FileInfo fi = new FileInfo(e.FullPath);
+                ConvertToXML(fi, TO_SIMPLE_PATH);
+                ongoing = false;
+            }
         }
 
-        private static void FileDeleted(object sender, FileSystemEventArgs e)
+        // Needed?
+        private void FileDeleted(object sender, FileSystemEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine(e.Name + " deleted.");
         }
 
+        // Needed?
         private void FileRenamed(object sender, RenamedEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine(e.OldName + " renamed to " + e.Name);

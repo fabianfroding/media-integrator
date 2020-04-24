@@ -33,7 +33,7 @@
             // 
             // BTNIntegrate
             // 
-            this.BTNIntegrate.Location = new System.Drawing.Point(43, 75);
+            this.BTNIntegrate.Location = new System.Drawing.Point(48, 154);
             this.BTNIntegrate.Name = "BTNIntegrate";
             this.BTNIntegrate.Size = new System.Drawing.Size(160, 57);
             this.BTNIntegrate.TabIndex = 0;
@@ -46,7 +46,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(447, 216);
+            this.ClientSize = new System.Drawing.Size(538, 271);
             this.Controls.Add(this.BTNIntegrate);
             this.Name = "MainForm";
             this.Text = "MainForm";

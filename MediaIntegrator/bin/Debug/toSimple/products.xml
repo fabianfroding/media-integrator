@@ -1,108 +1,168 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Products>
-  <Product>
-    <Id>6</Id>
+<Inventory>
+  <Item>
     <Name>Sicario OST</Name>
+    <Count>50</Count>
     <Price>179</Price>
-    <Stock>50</Stock>
-    <ProductType>CD</ProductType>
-  </Product>
-  <Product>
-    <Id>7</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>6</ProductID>
+  </Item>
+  <Item>
     <Name>The Matrix</Name>
+    <Count>50</Count>
     <Price>99</Price>
-    <Stock>50</Stock>
-    <ProductType>DVD</ProductType>
-  </Product>
-  <Product>
-    <Id>12</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>7</ProductID>
+  </Item>
+  <Item>
     <Name>Okami</Name>
+    <Count>50</Count>
     <Price>399</Price>
-    <Stock>50</Stock>
-    <ProductType>GAME</ProductType>
-  </Product>
-  <Product>
-    <Id>8</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>12</ProductID>
+  </Item>
+  <Item>
     <Name>The Organized Mind</Name>
+    <Count>49</Count>
     <Price>89</Price>
-    <Stock>49</Stock>
-    <ProductType>BOOK</ProductType>
-  </Product>
-  <Product>
-    <Id>13</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>8</ProductID>
+  </Item>
+  <Item>
     <Name>Dune</Name>
+    <Count>48</Count>
     <Price>199</Price>
-    <Stock>48</Stock>
-    <ProductType>DVD</ProductType>
-  </Product>
-  <Product>
-    <Id>1</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>13</ProductID>
+  </Item>
+  <Item>
     <Name>The Legend of Zelda: Breath of the Wild</Name>
+    <Count>49</Count>
     <Price>599</Price>
-    <Stock>49</Stock>
-    <ProductType>GAME</ProductType>
-  </Product>
-  <Product>
-    <Id>15</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>1</ProductID>
+  </Item>
+  <Item>
     <Name>What Every Body is Saying</Name>
+    <Count>48</Count>
     <Price>129</Price>
-    <Stock>48</Stock>
-    <ProductType>BOOK</ProductType>
-  </Product>
-  <Product>
-    <Id>4</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>15</ProductID>
+  </Item>
+  <Item>
     <Name>Atomic Habits</Name>
+    <Count>47</Count>
     <Price>189</Price>
-    <Stock>47</Stock>
-    <ProductType>BOOK</ProductType>
-  </Product>
-  <Product>
-    <Id>11</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>4</ProductID>
+  </Item>
+  <Item>
     <Name>Deltaco Signalomvandlare SCART till HDMI - Svart</Name>
+    <Count>47</Count>
     <Price>999</Price>
-    <Stock>47</Stock>
-    <ProductType>OTHER</ProductType>
-  </Product>
-  <Product>
-    <Id>2</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>11</ProductID>
+  </Item>
+  <Item>
     <Name>Wacom One 13"</Name>
+    <Count>48</Count>
     <Price>4390</Price>
-    <Stock>48</Stock>
-    <ProductType>OTHER</ProductType>
-  </Product>
-  <Product>
-    <Id>5</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>2</ProductID>
+  </Item>
+  <Item>
     <Name>Hollow Knight</Name>
+    <Count>46</Count>
     <Price>449</Price>
-    <Stock>46</Stock>
-    <ProductType>GAME</ProductType>
-  </Product>
-  <Product>
-    <Id>10</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>5</ProductID>
+  </Item>
+  <Item>
     <Name>Lenovo L27i-28</Name>
+    <Count>49</Count>
     <Price>2290</Price>
-    <Stock>49</Stock>
-    <ProductType>OTHER</ProductType>
-  </Product>
-  <Product>
-    <Id>3</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>10</ProductID>
+  </Item>
+  <Item>
     <Name>Mad Max: Fury Road</Name>
+    <Count>48</Count>
     <Price>99</Price>
-    <Stock>48</Stock>
-    <ProductType>DVD</ProductType>
-  </Product>
-  <Product>
-    <Id>9</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>3</ProductID>
+  </Item>
+  <Item>
     <Name>Octopath Traveler OST</Name>
+    <Count>48</Count>
     <Price>199</Price>
-    <Stock>48</Stock>
-    <ProductType>CD</ProductType>
-  </Product>
-  <Product>
-    <Id>14</Id>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>9</ProductID>
+  </Item>
+  <Item>
     <Name>Hail Caesar</Name>
+    <Count>48</Count>
     <Price>149</Price>
-    <Stock>48</Stock>
-    <ProductType>DVD</ProductType>
-  </Product>
-</Products>
+    <Comment></Comment>
+    <Artist></Artist>
+    <Publisher></Publisher>
+    <Genre></Genre>
+    <Year>0</Year>
+    <ProductID>14</ProductID>
+  </Item>
+</Inventory>
