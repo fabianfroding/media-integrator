@@ -4,18 +4,54 @@ namespace media_integrator
 {
     public partial class MainForm : Form
     {
-        private Parser parser;
+        private DirectoryWatcher directoryWatcher;
 
         public MainForm()
         {
             InitializeComponent();
-            parser = new Parser();
         }
 
         //=============== UI Interactives ===============//
-        private void BTNIntegrate_Click(object sender, System.EventArgs e)
+        private void BTNStartIntegration_Click(object sender, System.EventArgs e)
         {
-            parser.StartFileWatcher();
+            if (BTNStartIntegration.Text == "Start Integration")
+            {
+                if (TextBoxInputDir.Text != "" && TextBoxOutputDir.Text != "")
+                {
+                    directoryWatcher = new DirectoryWatcher(TextBoxInputDir.Text, TextBoxOutputDir.Text, "*.txt");
+                    directoryWatcher.StartFileWatcher();
+                    BTNStartIntegration.Text = "Stop Integration";
+                    LabelStatus.Text = "Running...";
+                }
+                else
+                {
+                    MessageBox.Show("Please select input and output directory.");
+                }
+            }
+            else
+            {
+                directoryWatcher.StopFileWatcher();
+                BTNStartIntegration.Text = "Start Integration";
+                LabelStatus.Text = "";
+            }
+        }
+
+        private void BTNSelectInputDir_Click(object sender, System.EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxInputDir.Text = fbd.SelectedPath;
+            }
+        }
+
+        private void BTNSelectOutputDir_Click(object sender, System.EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxOutputDir.Text = fbd.SelectedPath;
+            }
         }
 
     }
