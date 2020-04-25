@@ -5,23 +5,18 @@ namespace media_integrator
     class DirectoryWatcher
     {
         private readonly string outputDir;
-        private readonly string fileExtension;
         private bool ongoing = false;
 
         private readonly Parser parser;
 
         private readonly FileSystemWatcher fsw;
 
-        public DirectoryWatcher(string inputDir, string outputDir, string fileExtension)
+        public DirectoryWatcher(string inputDir, string outputDir)
         {
             this.outputDir = outputDir;
-            this.fileExtension = fileExtension;
             parser = new Parser();
-            fsw = new FileSystemWatcher(inputDir, fileExtension);
-            fsw.Created += new FileSystemEventHandler(FileChanged);
-            fsw.Changed += new FileSystemEventHandler(FileChanged);
-            fsw.Deleted += new FileSystemEventHandler(FileDeleted);
-            fsw.Renamed += new RenamedEventHandler(FileRenamed);
+            fsw = new FileSystemWatcher(inputDir);
+            fsw.Created += new FileSystemEventHandler(FileDetected);
         }
 
         //=============== Public Functions ===============//
@@ -36,39 +31,26 @@ namespace media_integrator
         }
 
         //=============== Private Functions ===============//
-        private void FileChanged(object sender, FileSystemEventArgs e)
+        private void FileDetected(object sender, FileSystemEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(e.Name + " created or changed.");
+            System.Diagnostics.Debug.WriteLine(e.Name + " detected.");
             if (!ongoing)
             {
                 ongoing = true;
-                parser.ConvertToXML(new FileInfo(e.FullPath), outputDir);
+                FileInfo fi = new FileInfo(e.FullPath);
+                if (fi.Extension == ".txt" || fi.Extension == ".csv")
+                {
+                    System.Diagnostics.Debug.WriteLine("File is " + fi.Extension + ". Converting to XML.");
+                    parser.ConvertCSVToXML(new FileInfo(e.FullPath), outputDir);
+                }
+                else if (fi.Extension == ".xml")
+                {
+                    System.Diagnostics.Debug.WriteLine("File is " + fi.Extension + ". Converting to CSV.");
+                    parser.ConvertXMLToCSV(new FileInfo(e.FullPath), outputDir);
+                }
                 ongoing = false;
             }
         }
 
-        // Needed?
-        private void FileDeleted(object sender, FileSystemEventArgs e)
-        {
-            System.Diagnostics.Debug.WriteLine(e.Name + " deleted.");
-            if (!ongoing)
-            {
-                ongoing = true;
-
-                ongoing = false;
-            }
-        }
-
-        // Needed?
-        private void FileRenamed(object sender, RenamedEventArgs e)
-        {
-            System.Diagnostics.Debug.WriteLine(e.OldName + " renamed to " + e.Name);
-            if (!ongoing)
-            {
-                ongoing = true;
-
-                ongoing = false;
-            }
-        }
     }
 }

@@ -20,20 +20,20 @@ namespace media_integrator
         };
 
         //=============== Public Functions ===============//
-        public void ConvertToXML(FileInfo fi, string outputDir)
+        public void ConvertCSVToXML(FileInfo fi, string outputDir)
         {
             List<string> lines = File.ReadAllLines(fi.FullName).ToList();
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
-            XmlWriter xw = XmlWriter.Create(outputDir + @"\products.xml", settings);
+            XmlWriter xmlWriter = XmlWriter.Create(outputDir + @"\products.xml", settings);
 
-            xw.WriteStartDocument();
-            xw.WriteStartElement("Inventory");
+            xmlWriter.WriteStartDocument();
+            xmlWriter.WriteStartElement("Inventory");
             foreach (string line in lines)
             {
                 if (line != "")
                 {
-                    xw.WriteStartElement("Item");
+                    xmlWriter.WriteStartElement("Item");
                     string[] productValues = line.Split('|');
                     string[] itemValues = new string[9];
 
@@ -49,16 +49,40 @@ namespace media_integrator
 
                     for (int i = 0; i < itemValues.Length; i++)
                     {
-                        xw.WriteStartElement(ITEM_FIELDS[i]);
-                        xw.WriteValue(itemValues[i]);
-                        xw.WriteEndElement();
+                        xmlWriter.WriteStartElement(ITEM_FIELDS[i]);
+                        xmlWriter.WriteValue(itemValues[i]);
+                        xmlWriter.WriteEndElement();
                     }
 
-                    xw.WriteEndElement();
+                    xmlWriter.WriteEndElement();
                 }
             }
-            xw.WriteEndElement();
-            xw.Close();
+            xmlWriter.WriteEndElement();
+            xmlWriter.Close();
+        }
+
+        public void ConvertXMLToCSV(FileInfo fi, string outputDir)
+        {
+            StreamReader streamReader = new StreamReader(fi.FullName);
+            XmlReaderSettings settings = new XmlReaderSettings();
+            XmlReader xmlReader = XmlReader.Create(streamReader, settings);
+
+            System.Diagnostics.Debug.WriteLine("Starting XML2CSV");
+            while (xmlReader.Read())
+            {
+                System.Diagnostics.Debug.WriteLine("Reading...");
+                if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "Item"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found Item...");
+                    if (xmlReader.HasAttributes)
+                    {
+                        System.Diagnostics.Debug.WriteLine(xmlReader.GetAttribute("Name"));
+                    }
+                }
+            }
+
+            xmlReader.Close();
+            streamReader.Close();
         }
 
     }

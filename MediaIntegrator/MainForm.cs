@@ -18,7 +18,7 @@ namespace media_integrator
             {
                 if (TextBoxInputDir.Text != "" && TextBoxOutputDir.Text != "")
                 {
-                    directoryWatcher = new DirectoryWatcher(TextBoxInputDir.Text, TextBoxOutputDir.Text, "*.txt");
+                    directoryWatcher = new DirectoryWatcher(TextBoxInputDir.Text, TextBoxOutputDir.Text);
                     directoryWatcher.StartFileWatcher();
                     BTNStartIntegration.Text = "Stop Integration";
                     LabelStatus.Text = "Running...";
