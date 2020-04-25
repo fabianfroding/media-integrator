@@ -63,26 +63,37 @@ namespace media_integrator
 
         public void ConvertXMLToCSV(FileInfo fi, string outputDir)
         {
-            StreamReader streamReader = new StreamReader(fi.FullName);
-            XmlReaderSettings settings = new XmlReaderSettings();
-            XmlReader xmlReader = XmlReader.Create(streamReader, settings);
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(fi.FullName);
+            StreamWriter streamWriter = new StreamWriter(outputDir + @"\" + fi.Name);
 
-            System.Diagnostics.Debug.WriteLine("Starting XML2CSV");
-            while (xmlReader.Read())
+            foreach (XmlNode xmlNode in xmlDocument.DocumentElement)
             {
-                System.Diagnostics.Debug.WriteLine("Reading...");
-                if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "Item"))
+                string[] values = new string[PRODUCT_FIELDS.Length];
+                foreach (XmlNode childNode in xmlNode.ChildNodes)
                 {
-                    System.Diagnostics.Debug.WriteLine("Found Item...");
-                    if (xmlReader.HasAttributes)
+                    if (childNode.Name == ITEM_FIELDS[0])
                     {
-                        System.Diagnostics.Debug.WriteLine(xmlReader.GetAttribute("Name"));
+                        values[1] = childNode.InnerText;
+                    }
+                    else if (childNode.Name == ITEM_FIELDS[1])
+                    {
+                        values[3] = childNode.InnerText;
+                    }
+                    else if (childNode.Name == ITEM_FIELDS[2])
+                    {
+                        values[2] = childNode.InnerText;
+                    }
+                    else if (childNode.Name == ITEM_FIELDS[8])
+                    {
+                        values[0] = childNode.InnerText;
                     }
                 }
+                values[4] = "OTHER";
+                
+                streamWriter.WriteLine(values[0] + "|" + values[1] + "|" + values[2] + "|" + values[3] + "|" + values[4]);
             }
-
-            xmlReader.Close();
-            streamReader.Close();
+            streamWriter.Close();
         }
 
     }
