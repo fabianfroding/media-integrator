@@ -19,7 +19,9 @@ namespace media_integrator
             fswMediaShop = new FileSystemWatcher();
             fswSimpleMedia = new FileSystemWatcher();
             fswMediaShop.Created += new FileSystemEventHandler(FileDetectedMediaShop);
+            fswMediaShop.Changed += new FileSystemEventHandler(FileDetectedMediaShop);
             fswSimpleMedia.Created += new FileSystemEventHandler(FileDetectedSimpleMedia);
+            fswSimpleMedia.Changed += new FileSystemEventHandler(FileDetectedSimpleMedia);
         }
 
         //=============== Public Functions ===============//
