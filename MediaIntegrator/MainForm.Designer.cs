@@ -60,7 +60,7 @@
             // 
             this.BTNSelectOutputDir.Location = new System.Drawing.Point(12, 93);
             this.BTNSelectOutputDir.Name = "BTNSelectOutputDir";
-            this.BTNSelectOutputDir.Size = new System.Drawing.Size(32, 26);
+            this.BTNSelectOutputDir.Size = new System.Drawing.Size(36, 26);
             this.BTNSelectOutputDir.TabIndex = 2;
             this.BTNSelectOutputDir.Text = "...";
             this.BTNSelectOutputDir.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             // 
             this.BTNSelectInputDir.Location = new System.Drawing.Point(12, 32);
             this.BTNSelectInputDir.Name = "BTNSelectInputDir";
-            this.BTNSelectInputDir.Size = new System.Drawing.Size(32, 26);
+            this.BTNSelectInputDir.Size = new System.Drawing.Size(36, 26);
             this.BTNSelectInputDir.TabIndex = 4;
             this.BTNSelectInputDir.Text = "...";
             this.BTNSelectInputDir.UseVisualStyleBackColor = true;
