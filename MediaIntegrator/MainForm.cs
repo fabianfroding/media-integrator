@@ -10,6 +10,8 @@ namespace media_integrator
         }
 
         //=============== UI Interactives ===============//
+        // Funktion som start övervakning på de båda programmen.
+        // Kräver att användaren angett de mappar som ska övervakas.
         private void BTNStartIntegration_Click(object sender, System.EventArgs e)
         {
             if (BTNStartIntegration.Text == "Start Integration")
@@ -40,6 +42,9 @@ namespace media_integrator
             }
         }
 
+        // De följande fyra funktionerna hanterar ändringar av input och output-mappar medan integreringen
+        // redan körs. Då anropas DirectoryWatcher-klassen så att dess FileSystemWatcher-klassar uppdaterar
+        // övervaknings-mappar.
         private void BTNSelectInputDirMediaShop_Click(object sender, System.EventArgs e)
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();

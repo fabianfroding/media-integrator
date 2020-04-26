@@ -6,6 +6,9 @@ namespace media_integrator
     {
         public static string OUTPUT_DIR_MEDIASHOP;
         public static string OUTPUT_DIR_SIMPLEMEDIA;
+        // Flag för att indikera om en konvertering (inte övervakning) redan körs. Ifall användaren drar
+        // flera filer direkt till en input-map förhindrar detta att alla konverteras, och konverterar
+        // bara den första den hittar.
         private static bool ongoing = false;
 
         private static readonly FileSystemWatcher fswMediaShop;
@@ -20,11 +23,15 @@ namespace media_integrator
         }
 
         //=============== Public Functions ===============//
+        // Denna funktion uppdaterar input-mappen för MediaShop
+        // ifall den ändras medans integratorn redan körs.
         public static void SetInputDirectoryMediaShop(string path)
         {
             fswMediaShop.Path = path;
         }
 
+        // Denna funktion uppdaterar input-mappen för SimpleMedia
+        // ifall den ändras medans integratorn redan körs.
         public static void SetInputDirectorySimpleMedia(string path)
         {
             fswSimpleMedia.Path = path;
@@ -43,32 +50,30 @@ namespace media_integrator
         }
 
         //=============== Private Functions ===============//
+        // Övervakning av input-filer från MediaShop.
         private static void FileDetectedMediaShop(object sender, FileSystemEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(e.Name + " detected.");
             if (!ongoing)
             {
                 ongoing = true;
                 FileInfo fi = new FileInfo(e.FullPath);
                 if (fi.Extension == ".txt" || fi.Extension == ".csv")
                 {
-                    System.Diagnostics.Debug.WriteLine("File is " + fi.Extension + ". Converting to XML.");
                     Parser.ConvertCSVToXML(new FileInfo(e.FullPath), OUTPUT_DIR_MEDIASHOP);
                 }
                 ongoing = false;
             }
         }
 
+        // Övervakning av filer från SimpleMedia.
         private static void FileDetectedSimpleMedia(object sender, FileSystemEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(e.Name + " detected.");
             if (!ongoing)
             {
                 ongoing = true;
                 FileInfo fi = new FileInfo(e.FullPath);
                 if (fi.Extension == ".xml")
                 {
-                    System.Diagnostics.Debug.WriteLine("File is " + fi.Extension + ". Converting to CSV.");
                     Parser.ConvertXMLToCSV(new FileInfo(e.FullPath), OUTPUT_DIR_SIMPLEMEDIA);
                 }
                 ongoing = false;
