@@ -4,8 +4,6 @@ namespace media_integrator
 {
     public partial class MainForm : Form
     {
-        private DirectoryWatcher directoryWatcher;
-
         public MainForm()
         {
             InitializeComponent();
@@ -16,43 +14,70 @@ namespace media_integrator
         {
             if (BTNStartIntegration.Text == "Start Integration")
             {
-                if (TextBoxInputDir.Text != "" && TextBoxOutputDir.Text != "")
+                if (
+                    TextBoxInputDirMediaShop.Text != "" && TextBoxOutputDirMediaShop.Text != "" &&
+                    TextBoxInputDirSimpleMedia.Text != "" && TextBoxOutputDirSimpleMedia.Text != ""
+                    )
                 {
-                    directoryWatcher = new DirectoryWatcher(TextBoxInputDir.Text, TextBoxOutputDir.Text);
-                    directoryWatcher.StartFileWatcher();
+                    DirectoryWatcher.SetInputDirectoryMediaShop(TextBoxInputDirMediaShop.Text);
+                    DirectoryWatcher.OUTPUT_DIR_MEDIASHOP = TextBoxOutputDirMediaShop.Text;
+                    DirectoryWatcher.SetInputDirectorySimpleMedia(TextBoxInputDirSimpleMedia.Text);
+                    DirectoryWatcher.OUTPUT_DIR_SIMPLEMEDIA = TextBoxOutputDirSimpleMedia.Text;
+                    DirectoryWatcher.StartFileWatcher();
                     BTNStartIntegration.Text = "Stop Integration";
                     LabelStatus.Text = "Running...";
                 }
                 else
                 {
-                    MessageBox.Show("Please select input and output directory.");
+                    MessageBox.Show("Please select input and output directories.");
                 }
             }
             else
             {
-                directoryWatcher.StopFileWatcher();
+                DirectoryWatcher.StopFileWatcher();
                 BTNStartIntegration.Text = "Start Integration";
                 LabelStatus.Text = "";
             }
         }
 
-        private void BTNSelectInputDir_Click(object sender, System.EventArgs e)
+        private void BTNSelectInputDirMediaShop_Click(object sender, System.EventArgs e)
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                TextBoxInputDir.Text = fbd.SelectedPath;
+                TextBoxInputDirMediaShop.Text = fbd.SelectedPath;
+                DirectoryWatcher.SetInputDirectoryMediaShop(TextBoxInputDirMediaShop.Text);
             }
         }
 
-        private void BTNSelectOutputDir_Click(object sender, System.EventArgs e)
+        private void BTNSelectOutputDirMediaShop_Click(object sender, System.EventArgs e)
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                TextBoxOutputDir.Text = fbd.SelectedPath;
+                TextBoxOutputDirMediaShop.Text = fbd.SelectedPath;
+                DirectoryWatcher.OUTPUT_DIR_MEDIASHOP = TextBoxOutputDirMediaShop.Text;
             }
         }
 
+        private void BTNSelectInputDirSimpleMedia_Click(object sender, System.EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxInputDirSimpleMedia.Text = fbd.SelectedPath;
+                DirectoryWatcher.SetInputDirectorySimpleMedia(TextBoxInputDirSimpleMedia.Text);
+            }
+        }
+
+        private void BTNSelectOutputDirSimpleMedia_Click(object sender, System.EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxOutputDirSimpleMedia.Text = fbd.SelectedPath;
+                DirectoryWatcher.OUTPUT_DIR_SIMPLEMEDIA = TextBoxOutputDirSimpleMedia.Text;
+            }
+        }
     }
 }

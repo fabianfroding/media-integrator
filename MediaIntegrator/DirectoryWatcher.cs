@@ -2,36 +2,48 @@
 
 namespace media_integrator
 {
-    class DirectoryWatcher
+    static class DirectoryWatcher
     {
-        private readonly string outputDir;
-        private bool ongoing = false;
+        public static string OUTPUT_DIR_MEDIASHOP;
+        public static string OUTPUT_DIR_SIMPLEMEDIA;
+        private static bool ongoing = false;
 
-        private readonly Parser parser;
+        private static readonly FileSystemWatcher fswMediaShop;
+        private static readonly FileSystemWatcher fswSimpleMedia;
 
-        private readonly FileSystemWatcher fsw;
-
-        public DirectoryWatcher(string inputDir, string outputDir)
+        static DirectoryWatcher()
         {
-            this.outputDir = outputDir;
-            parser = new Parser();
-            fsw = new FileSystemWatcher(inputDir);
-            fsw.Created += new FileSystemEventHandler(FileDetected);
+            fswMediaShop = new FileSystemWatcher();
+            fswSimpleMedia = new FileSystemWatcher();
+            fswMediaShop.Created += new FileSystemEventHandler(FileDetectedMediaShop);
+            fswSimpleMedia.Created += new FileSystemEventHandler(FileDetectedSimpleMedia);
         }
 
         //=============== Public Functions ===============//
-        public void StartFileWatcher()
+        public static void SetInputDirectoryMediaShop(string path)
         {
-            fsw.EnableRaisingEvents = true;
+            fswMediaShop.Path = path;
         }
 
-        public void StopFileWatcher()
+        public static void SetInputDirectorySimpleMedia(string path)
         {
-            fsw.EnableRaisingEvents = false;
+            fswSimpleMedia.Path = path;
+        }
+
+        public static void StartFileWatcher()
+        {
+            fswMediaShop.EnableRaisingEvents = true;
+            fswSimpleMedia.EnableRaisingEvents = true;
+        }
+
+        public static void StopFileWatcher()
+        {
+            fswMediaShop.EnableRaisingEvents = false;
+            fswSimpleMedia.EnableRaisingEvents = false;
         }
 
         //=============== Private Functions ===============//
-        private void FileDetected(object sender, FileSystemEventArgs e)
+        private static void FileDetectedMediaShop(object sender, FileSystemEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine(e.Name + " detected.");
             if (!ongoing)
@@ -41,12 +53,23 @@ namespace media_integrator
                 if (fi.Extension == ".txt" || fi.Extension == ".csv")
                 {
                     System.Diagnostics.Debug.WriteLine("File is " + fi.Extension + ". Converting to XML.");
-                    parser.ConvertCSVToXML(new FileInfo(e.FullPath), outputDir);
+                    Parser.ConvertCSVToXML(new FileInfo(e.FullPath), OUTPUT_DIR_MEDIASHOP);
                 }
-                else if (fi.Extension == ".xml")
+                ongoing = false;
+            }
+        }
+
+        private static void FileDetectedSimpleMedia(object sender, FileSystemEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(e.Name + " detected.");
+            if (!ongoing)
+            {
+                ongoing = true;
+                FileInfo fi = new FileInfo(e.FullPath);
+                if (fi.Extension == ".xml")
                 {
                     System.Diagnostics.Debug.WriteLine("File is " + fi.Extension + ". Converting to CSV.");
-                    parser.ConvertXMLToCSV(new FileInfo(e.FullPath), outputDir);
+                    Parser.ConvertXMLToCSV(new FileInfo(e.FullPath), OUTPUT_DIR_SIMPLEMEDIA);
                 }
                 ongoing = false;
             }

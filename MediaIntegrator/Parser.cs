@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace media_integrator
 {
-    class Parser
+    static class Parser
     {
         // Product-klassens fält från MediaShop.
         private static readonly string[] PRODUCT_FIELDS = new string[5]
@@ -20,7 +20,7 @@ namespace media_integrator
         };
 
         //=============== Public Functions ===============//
-        public void ConvertCSVToXML(FileInfo fi, string outputDir)
+        public static void ConvertCSVToXML(FileInfo fi, string outputDir)
         {
             List<string> lines = File.ReadAllLines(fi.FullName).ToList();
             XmlWriterSettings settings = new XmlWriterSettings();
@@ -61,11 +61,11 @@ namespace media_integrator
             xmlWriter.Close();
         }
 
-        public void ConvertXMLToCSV(FileInfo fi, string outputDir)
+        public static void ConvertXMLToCSV(FileInfo fi, string outputDir)
         {
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.Load(fi.FullName);
-            StreamWriter streamWriter = new StreamWriter(outputDir + @"\" + fi.Name);
+            StreamWriter streamWriter = new StreamWriter(outputDir + @"\" + fi.Name.Replace(".xml", ".txt"));
 
             foreach (XmlNode xmlNode in xmlDocument.DocumentElement)
             {

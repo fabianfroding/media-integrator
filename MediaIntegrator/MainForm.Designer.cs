@@ -29,18 +29,24 @@
         private void InitializeComponent()
         {
             this.BTNStartIntegration = new System.Windows.Forms.Button();
-            this.TextBoxOutputDir = new System.Windows.Forms.TextBox();
-            this.BTNSelectOutputDir = new System.Windows.Forms.Button();
-            this.BTNSelectInputDir = new System.Windows.Forms.Button();
-            this.TextBoxInputDir = new System.Windows.Forms.TextBox();
-            this.LabelOutputDir = new System.Windows.Forms.Label();
-            this.LabelInputDir = new System.Windows.Forms.Label();
+            this.TextBoxOutputDirMediaShop = new System.Windows.Forms.TextBox();
+            this.BTNSelectOutputDirMediaShop = new System.Windows.Forms.Button();
+            this.BTNSelectInputDirMediaShop = new System.Windows.Forms.Button();
+            this.TextBoxInputDirMediaShop = new System.Windows.Forms.TextBox();
+            this.LabelOutputDirMediaShop = new System.Windows.Forms.Label();
+            this.LabelInputDirMediaShop = new System.Windows.Forms.Label();
             this.LabelStatus = new System.Windows.Forms.Label();
+            this.LabelInputDirSimpleMedia = new System.Windows.Forms.Label();
+            this.LabelOutputDirSimpleMedia = new System.Windows.Forms.Label();
+            this.BTNSelectInputDirSimpleMedia = new System.Windows.Forms.Button();
+            this.TextBoxInputDirSimpleMedia = new System.Windows.Forms.TextBox();
+            this.BTNSelectOutputDirSimpleMedia = new System.Windows.Forms.Button();
+            this.TextBoxOutputDirSimpleMedia = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // BTNStartIntegration
             // 
-            this.BTNStartIntegration.Location = new System.Drawing.Point(12, 148);
+            this.BTNStartIntegration.Location = new System.Drawing.Point(12, 333);
             this.BTNStartIntegration.Name = "BTNStartIntegration";
             this.BTNStartIntegration.Size = new System.Drawing.Size(160, 32);
             this.BTNStartIntegration.TabIndex = 0;
@@ -48,88 +54,150 @@
             this.BTNStartIntegration.UseVisualStyleBackColor = true;
             this.BTNStartIntegration.Click += new System.EventHandler(this.BTNStartIntegration_Click);
             // 
-            // TextBoxOutputDir
+            // TextBoxOutputDirMediaShop
             // 
-            this.TextBoxOutputDir.Location = new System.Drawing.Point(50, 93);
-            this.TextBoxOutputDir.Name = "TextBoxOutputDir";
-            this.TextBoxOutputDir.ReadOnly = true;
-            this.TextBoxOutputDir.Size = new System.Drawing.Size(416, 26);
-            this.TextBoxOutputDir.TabIndex = 1;
+            this.TextBoxOutputDirMediaShop.Location = new System.Drawing.Point(50, 93);
+            this.TextBoxOutputDirMediaShop.Name = "TextBoxOutputDirMediaShop";
+            this.TextBoxOutputDirMediaShop.ReadOnly = true;
+            this.TextBoxOutputDirMediaShop.Size = new System.Drawing.Size(416, 26);
+            this.TextBoxOutputDirMediaShop.TabIndex = 1;
             // 
-            // BTNSelectOutputDir
+            // BTNSelectOutputDirMediaShop
             // 
-            this.BTNSelectOutputDir.Location = new System.Drawing.Point(12, 93);
-            this.BTNSelectOutputDir.Name = "BTNSelectOutputDir";
-            this.BTNSelectOutputDir.Size = new System.Drawing.Size(36, 26);
-            this.BTNSelectOutputDir.TabIndex = 2;
-            this.BTNSelectOutputDir.Text = "...";
-            this.BTNSelectOutputDir.UseVisualStyleBackColor = true;
-            this.BTNSelectOutputDir.Click += new System.EventHandler(this.BTNSelectOutputDir_Click);
+            this.BTNSelectOutputDirMediaShop.Location = new System.Drawing.Point(12, 93);
+            this.BTNSelectOutputDirMediaShop.Name = "BTNSelectOutputDirMediaShop";
+            this.BTNSelectOutputDirMediaShop.Size = new System.Drawing.Size(36, 26);
+            this.BTNSelectOutputDirMediaShop.TabIndex = 2;
+            this.BTNSelectOutputDirMediaShop.Text = "...";
+            this.BTNSelectOutputDirMediaShop.UseVisualStyleBackColor = true;
+            this.BTNSelectOutputDirMediaShop.Click += new System.EventHandler(this.BTNSelectOutputDirMediaShop_Click);
             // 
-            // BTNSelectInputDir
+            // BTNSelectInputDirMediaShop
             // 
-            this.BTNSelectInputDir.Location = new System.Drawing.Point(12, 32);
-            this.BTNSelectInputDir.Name = "BTNSelectInputDir";
-            this.BTNSelectInputDir.Size = new System.Drawing.Size(36, 26);
-            this.BTNSelectInputDir.TabIndex = 4;
-            this.BTNSelectInputDir.Text = "...";
-            this.BTNSelectInputDir.UseVisualStyleBackColor = true;
-            this.BTNSelectInputDir.Click += new System.EventHandler(this.BTNSelectInputDir_Click);
+            this.BTNSelectInputDirMediaShop.Location = new System.Drawing.Point(12, 32);
+            this.BTNSelectInputDirMediaShop.Name = "BTNSelectInputDirMediaShop";
+            this.BTNSelectInputDirMediaShop.Size = new System.Drawing.Size(36, 26);
+            this.BTNSelectInputDirMediaShop.TabIndex = 4;
+            this.BTNSelectInputDirMediaShop.Text = "...";
+            this.BTNSelectInputDirMediaShop.UseVisualStyleBackColor = true;
+            this.BTNSelectInputDirMediaShop.Click += new System.EventHandler(this.BTNSelectInputDirMediaShop_Click);
             // 
-            // TextBoxInputDir
+            // TextBoxInputDirMediaShop
             // 
-            this.TextBoxInputDir.Location = new System.Drawing.Point(50, 32);
-            this.TextBoxInputDir.Name = "TextBoxInputDir";
-            this.TextBoxInputDir.ReadOnly = true;
-            this.TextBoxInputDir.Size = new System.Drawing.Size(416, 26);
-            this.TextBoxInputDir.TabIndex = 3;
+            this.TextBoxInputDirMediaShop.Location = new System.Drawing.Point(50, 32);
+            this.TextBoxInputDirMediaShop.Name = "TextBoxInputDirMediaShop";
+            this.TextBoxInputDirMediaShop.ReadOnly = true;
+            this.TextBoxInputDirMediaShop.Size = new System.Drawing.Size(416, 26);
+            this.TextBoxInputDirMediaShop.TabIndex = 3;
             // 
-            // LabelOutputDir
+            // LabelOutputDirMediaShop
             // 
-            this.LabelOutputDir.AutoSize = true;
-            this.LabelOutputDir.ForeColor = System.Drawing.Color.White;
-            this.LabelOutputDir.Location = new System.Drawing.Point(8, 70);
-            this.LabelOutputDir.Name = "LabelOutputDir";
-            this.LabelOutputDir.Size = new System.Drawing.Size(129, 20);
-            this.LabelOutputDir.TabIndex = 5;
-            this.LabelOutputDir.Text = "Output Directory:";
+            this.LabelOutputDirMediaShop.AutoSize = true;
+            this.LabelOutputDirMediaShop.ForeColor = System.Drawing.Color.White;
+            this.LabelOutputDirMediaShop.Location = new System.Drawing.Point(8, 70);
+            this.LabelOutputDirMediaShop.Name = "LabelOutputDirMediaShop";
+            this.LabelOutputDirMediaShop.Size = new System.Drawing.Size(218, 20);
+            this.LabelOutputDirMediaShop.TabIndex = 5;
+            this.LabelOutputDirMediaShop.Text = "Media Shop Output Directory:";
             // 
-            // LabelInputDir
+            // LabelInputDirMediaShop
             // 
-            this.LabelInputDir.AutoSize = true;
-            this.LabelInputDir.ForeColor = System.Drawing.Color.White;
-            this.LabelInputDir.Location = new System.Drawing.Point(8, 9);
-            this.LabelInputDir.Name = "LabelInputDir";
-            this.LabelInputDir.Size = new System.Drawing.Size(117, 20);
-            this.LabelInputDir.TabIndex = 6;
-            this.LabelInputDir.Text = "Input Directory:";
+            this.LabelInputDirMediaShop.AutoSize = true;
+            this.LabelInputDirMediaShop.ForeColor = System.Drawing.Color.White;
+            this.LabelInputDirMediaShop.Location = new System.Drawing.Point(8, 9);
+            this.LabelInputDirMediaShop.Name = "LabelInputDirMediaShop";
+            this.LabelInputDirMediaShop.Size = new System.Drawing.Size(206, 20);
+            this.LabelInputDirMediaShop.TabIndex = 6;
+            this.LabelInputDirMediaShop.Text = "Media Shop Input Directory:";
             // 
             // LabelStatus
             // 
             this.LabelStatus.AutoSize = true;
             this.LabelStatus.ForeColor = System.Drawing.Color.White;
-            this.LabelStatus.Location = new System.Drawing.Point(178, 154);
+            this.LabelStatus.Location = new System.Drawing.Point(178, 339);
             this.LabelStatus.Name = "LabelStatus";
             this.LabelStatus.Size = new System.Drawing.Size(0, 20);
             this.LabelStatus.TabIndex = 7;
+            // 
+            // LabelInputDirSimpleMedia
+            // 
+            this.LabelInputDirSimpleMedia.AutoSize = true;
+            this.LabelInputDirSimpleMedia.ForeColor = System.Drawing.Color.White;
+            this.LabelInputDirSimpleMedia.Location = new System.Drawing.Point(8, 168);
+            this.LabelInputDirSimpleMedia.Name = "LabelInputDirSimpleMedia";
+            this.LabelInputDirSimpleMedia.Size = new System.Drawing.Size(216, 20);
+            this.LabelInputDirSimpleMedia.TabIndex = 13;
+            this.LabelInputDirSimpleMedia.Text = "Simple Media Input Directory:";
+            // 
+            // LabelOutputDirSimpleMedia
+            // 
+            this.LabelOutputDirSimpleMedia.AutoSize = true;
+            this.LabelOutputDirSimpleMedia.ForeColor = System.Drawing.Color.White;
+            this.LabelOutputDirSimpleMedia.Location = new System.Drawing.Point(8, 229);
+            this.LabelOutputDirSimpleMedia.Name = "LabelOutputDirSimpleMedia";
+            this.LabelOutputDirSimpleMedia.Size = new System.Drawing.Size(228, 20);
+            this.LabelOutputDirSimpleMedia.TabIndex = 12;
+            this.LabelOutputDirSimpleMedia.Text = "Simple Media Output Directory:";
+            // 
+            // BTNSelectInputDirSimpleMedia
+            // 
+            this.BTNSelectInputDirSimpleMedia.Location = new System.Drawing.Point(12, 191);
+            this.BTNSelectInputDirSimpleMedia.Name = "BTNSelectInputDirSimpleMedia";
+            this.BTNSelectInputDirSimpleMedia.Size = new System.Drawing.Size(36, 26);
+            this.BTNSelectInputDirSimpleMedia.TabIndex = 11;
+            this.BTNSelectInputDirSimpleMedia.Text = "...";
+            this.BTNSelectInputDirSimpleMedia.UseVisualStyleBackColor = true;
+            this.BTNSelectInputDirSimpleMedia.Click += new System.EventHandler(this.BTNSelectInputDirSimpleMedia_Click);
+            // 
+            // TextBoxInputDirSimpleMedia
+            // 
+            this.TextBoxInputDirSimpleMedia.Location = new System.Drawing.Point(50, 191);
+            this.TextBoxInputDirSimpleMedia.Name = "TextBoxInputDirSimpleMedia";
+            this.TextBoxInputDirSimpleMedia.ReadOnly = true;
+            this.TextBoxInputDirSimpleMedia.Size = new System.Drawing.Size(416, 26);
+            this.TextBoxInputDirSimpleMedia.TabIndex = 10;
+            // 
+            // BTNSelectOutputDirSimpleMedia
+            // 
+            this.BTNSelectOutputDirSimpleMedia.Location = new System.Drawing.Point(12, 252);
+            this.BTNSelectOutputDirSimpleMedia.Name = "BTNSelectOutputDirSimpleMedia";
+            this.BTNSelectOutputDirSimpleMedia.Size = new System.Drawing.Size(36, 26);
+            this.BTNSelectOutputDirSimpleMedia.TabIndex = 9;
+            this.BTNSelectOutputDirSimpleMedia.Text = "...";
+            this.BTNSelectOutputDirSimpleMedia.UseVisualStyleBackColor = true;
+            this.BTNSelectOutputDirSimpleMedia.Click += new System.EventHandler(this.BTNSelectOutputDirSimpleMedia_Click);
+            // 
+            // TextBoxOutputDirSimpleMedia
+            // 
+            this.TextBoxOutputDirSimpleMedia.Location = new System.Drawing.Point(50, 252);
+            this.TextBoxOutputDirSimpleMedia.Name = "TextBoxOutputDirSimpleMedia";
+            this.TextBoxOutputDirSimpleMedia.ReadOnly = true;
+            this.TextBoxOutputDirSimpleMedia.Size = new System.Drawing.Size(416, 26);
+            this.TextBoxOutputDirSimpleMedia.TabIndex = 8;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(538, 271);
+            this.ClientSize = new System.Drawing.Size(546, 377);
+            this.Controls.Add(this.LabelInputDirSimpleMedia);
+            this.Controls.Add(this.LabelOutputDirSimpleMedia);
+            this.Controls.Add(this.BTNSelectInputDirSimpleMedia);
+            this.Controls.Add(this.TextBoxInputDirSimpleMedia);
+            this.Controls.Add(this.BTNSelectOutputDirSimpleMedia);
+            this.Controls.Add(this.TextBoxOutputDirSimpleMedia);
             this.Controls.Add(this.LabelStatus);
-            this.Controls.Add(this.LabelInputDir);
-            this.Controls.Add(this.LabelOutputDir);
-            this.Controls.Add(this.BTNSelectInputDir);
-            this.Controls.Add(this.TextBoxInputDir);
-            this.Controls.Add(this.BTNSelectOutputDir);
-            this.Controls.Add(this.TextBoxOutputDir);
+            this.Controls.Add(this.LabelInputDirMediaShop);
+            this.Controls.Add(this.LabelOutputDirMediaShop);
+            this.Controls.Add(this.BTNSelectInputDirMediaShop);
+            this.Controls.Add(this.TextBoxInputDirMediaShop);
+            this.Controls.Add(this.BTNSelectOutputDirMediaShop);
+            this.Controls.Add(this.TextBoxOutputDirMediaShop);
             this.Controls.Add(this.BTNStartIntegration);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Media Integrator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,13 +206,19 @@
         #endregion
 
         private System.Windows.Forms.Button BTNStartIntegration;
-        private System.Windows.Forms.TextBox TextBoxOutputDir;
-        private System.Windows.Forms.Button BTNSelectOutputDir;
-        private System.Windows.Forms.Button BTNSelectInputDir;
-        private System.Windows.Forms.TextBox TextBoxInputDir;
-        private System.Windows.Forms.Label LabelOutputDir;
-        private System.Windows.Forms.Label LabelInputDir;
+        private System.Windows.Forms.TextBox TextBoxOutputDirMediaShop;
+        private System.Windows.Forms.Button BTNSelectOutputDirMediaShop;
+        private System.Windows.Forms.Button BTNSelectInputDirMediaShop;
+        private System.Windows.Forms.TextBox TextBoxInputDirMediaShop;
+        private System.Windows.Forms.Label LabelOutputDirMediaShop;
+        private System.Windows.Forms.Label LabelInputDirMediaShop;
         private System.Windows.Forms.Label LabelStatus;
+        private System.Windows.Forms.Label LabelInputDirSimpleMedia;
+        private System.Windows.Forms.Label LabelOutputDirSimpleMedia;
+        private System.Windows.Forms.Button BTNSelectInputDirSimpleMedia;
+        private System.Windows.Forms.TextBox TextBoxInputDirSimpleMedia;
+        private System.Windows.Forms.Button BTNSelectOutputDirSimpleMedia;
+        private System.Windows.Forms.TextBox TextBoxOutputDirSimpleMedia;
     }
 }
 
